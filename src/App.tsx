@@ -3,14 +3,11 @@ import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 
-function hello() {
-}
-
-// hello();
-
 function App() {
     return (
         <div className="App">
+            <input/>
+            <input checked={true} value="yo" type="password"/>
             <AppTitle/>
             <Rating/>
             <Accordion/>
