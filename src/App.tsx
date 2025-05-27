@@ -6,21 +6,30 @@ import {Rating} from "./components/Rating/Rating";
 function App() {
     return (
         <div className="App">
-            <input/>
-            <input checked={true} value="yo" type="password"/>
-            <AppTitle/>
-            <Rating/>
-            <Accordion/>
-            <Rating/>
+            <PageTitle title="This is App component"/>
+            <PageTitle title="My friends"/>
+            Article 1
+            <Accordion titleValue="Menu" collapsed={true}/>
+            <Accordion titleValue="Users" collapsed={false}/>
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
         </div>
     );
 }
 
-function AppTitle() {
+type PageTitlePropsType = {
+    title: string
+}
+
+function PageTitle(props: PageTitlePropsType) {
     return (
-        <>
-            This is App component
-        </>
+        <h1>
+            {props.title}
+        </h1>
     )
 }
 
