@@ -10,7 +10,7 @@ export function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
 
     return (
         <div>
-            <AccordionTitle title={props.titleValue} callBack={() => setCollapsed(!collapsed)}/>
+            <AccordionTitle title={props.titleValue} onClick={ () => {setCollapsed(!collapsed)} }/>
             { collapsed && <AccordionBody/> }
         </div>
     )
@@ -18,12 +18,12 @@ export function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
 
 type AccordionTitlePropsType = {
     title: string
-    callBack: () => void
+    onClick: () => void
 }
 
 const AccordionTitle = (props: AccordionTitlePropsType) => {
     return (
-        <h3 onClick={props.callBack}>-- {props.title} --</h3>
+        <h3 onClick={ () => {props.onClick()} }>-- {props.title} --</h3>
     )
 }
 
